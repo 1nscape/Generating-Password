@@ -19,9 +19,42 @@ var confirmLength;
 
 
 function writePassword() {
-  
-  
-  
+
+  confirmLength = prompt("How many characters you want? Choose between 8 to 128")
+
+  if (confirmLength <= 8 || confirmLength >= 128) {
+    alert("Must be between 8 to 128 characters, try again.");
+    return;
+  }
+
+
+  confirmUpperCase = confirm("Would you like to have an upper case?");
+  if (confirmUpperCase === true) {
+    passwordOptions = passwordOptions.concat(upperCase)
+  }
+
+
+  confirmLowerCase = confirm("Would you like to have lower case?");
+  if (confirmLowerCase === true) {
+    passwordOptions = passwordOptions.concat(lowerCase)
+  }
+
+  confirmSpecialCharacter = confirm("Would you like to have special characters?");
+  if (confirmSpecialCharacter === true) {
+    passwordOptions = passwordOptions.concat(specialCharacter)
+  }
+
+  confirmNumber = confirm("Would you like to have numbers?");
+  if (confirmNumber === true) {
+    passwordOptions = passwordOptions.concat(number)
+  }
+
+  if (confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumber === false) {
+    alert("Please choose one criteria")
+    return;
+  }
+
+
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
