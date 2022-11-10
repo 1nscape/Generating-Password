@@ -19,7 +19,8 @@ var confirmLength;
 
 
 function writePassword() {
-
+  var passwordOptions = []
+  var finalPassword = []
   confirmLength = prompt("How many characters you want? Choose between 8 to 128")
 
   if (confirmLength <= 8 || confirmLength >= 128) {
