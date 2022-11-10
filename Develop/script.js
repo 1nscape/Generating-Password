@@ -54,6 +54,8 @@ function writePassword() {
     alert("Please choose one criteria")
     return;
   }
+  for (let index = 0; index < confirmLength; index++) {
+    finalPassword.push(passwordOptions[Math.floor(Math.random() * passwordOptions.length)])
 
 
 
